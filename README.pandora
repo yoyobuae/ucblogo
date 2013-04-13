@@ -1,0 +1,25 @@
+First build libbsd for Pandora:
+
+wget http://libbsd.freedesktop.org/releases/libbsd-0.4.2.tar.gz
+tar xzf libbsd-0.4.2.tar.gz
+cd libbsd-0.4.2
+CFLAGS="-O3 -mcpu=cortex-a8 -mfpu=neon -mfloat-abi=softfp -ffast-math"
+CFLAGS="$CFLAGS" ./configure --prefix=/tmp/libbsd
+make
+make install
+
+Then build UCB Logo:
+
+CFLAGS="-O3 -mcpu=cortex-a8 -mfpu=neon -mfloat-abi=softfp -ffast-math -I/tmp/libbsd/include"
+LIBS="-L/tmp/libbsd/lib -lbsd"
+CFLAGS="$CFLAGS" LIBS="$LIBS" ./configure --prefix=/mnt/utmp/ucblogo
+make
+make install
+
+The last step fails with this error:
+make: *** No rule to make target `all', needed by `install'.  Stop.
+
+Fix this by removing the "all" dependency from the "install" target in makefile:
+install: all
+Replace with
+install:
