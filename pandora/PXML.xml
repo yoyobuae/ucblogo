@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PXML xmlns="http://openpandora.org/namespaces/PXML" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PXML_schema.xsd">
+  <application id="ucblogo.yoyobuae.00001">
+    <exec command="run.sh" standalone="true" x11="req"/>
+    <title lang="en_US">UCB Logo</title>
+    <author name="Brian Harvey" website="http://www.cs.berkeley.edu/~bh/logo.html" email=""/>
+    <version major="6" minor="0" release="0" build="0" type="release"/>
+    <osversion major="1" minor="0" release="0" build="0"/>
+    <description lang="en_US">A programming language used for education. Logo's best known feature is the turtle, which is an on-screen cursor, which can be given movement and drawing instructions, and is used to programmatically produce line graphics.</description>
+    <icon src="icon.png"/>
+    <previewpics>
+    </previewpics>
+    <categories>
+      <category name="Education">
+        <subcategory name="ComputerScience"/>
+      </category>
+      <category name="Development">
+        <subcategory name="Building"/>
+      </category>
+    </categories>
+    <licenses>
+      <license name="GPLv2+" url="http://www.gnu.org/licenses/gpl-2.0.html" sourcecodeurl="http://pandora.org/sources/package.tar.bz2"/>
+    </licenses>
+  </application>
+</PXML>
