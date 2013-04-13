@@ -17,8 +17,11 @@ void logofill(void);
 #define NUMINITCOLORS 16
 #define EVENT_MASK  (StructureNotifyMask | PointerMotionMask \
 		     | ButtonPressMask | ButtonReleaseMask)
-#define DEFAULT_HEIGHT           500
-#define DEFAULT_WIDTH            500
+/* Reduce graphics window size for better fit in Open Pandora screen */
+// #define DEFAULT_HEIGHT           500
+// #define DEFAULT_WIDTH            500
+#define DEFAULT_HEIGHT           400
+#define DEFAULT_WIDTH            400
 
 #define GR_SIZE         60000
 

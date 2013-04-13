@@ -157,8 +157,11 @@ void real_window_init()
   xsh.flags = (PPosition | PSize);
   xsh.height = DEFAULT_HEIGHT;
   xsh.width = DEFAULT_WIDTH;
-  xsh.x = (DisplayWidth(dpy, DefaultScreen(dpy)) - xsh.width) / 2;
-  xsh.y = (DisplayHeight(dpy, DefaultScreen(dpy)) - xsh.height) / 2;
+  /* Create window in top right for better fit in Open Pandora screen */
+  // xsh.x = (DisplayWidth(dpy, DefaultScreen(dpy)) - xsh.width) / 2;
+  xsh.x = (DisplayWidth(dpy, DefaultScreen(dpy)) - xsh.width);
+  // xsh.y = (DisplayHeight(dpy, DefaultScreen(dpy)) - xsh.height) / 2;
+  xsh.y = 0;
 
   win = XCreateSimpleWindow(dpy, DefaultRootWindow(dpy),
 			    xsh.x, xsh.y, xsh.width, xsh.height,
